@@ -19,6 +19,7 @@ export const Morty = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
     name: "Morty Smith",
+    status: "Alive",
     species: "Human",
     origin: "Earth (C-137)",
   });
@@ -27,6 +28,7 @@ export const CrabSpider = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/79.jpeg",
     name: "Crab Spider",
+    status: "Alive",
     species: "Alien",
     origin: "Hideout Planet",
   });
@@ -35,6 +37,7 @@ export const RegularTyrionLannister = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/407.jpeg",
     name: "Regular Tyrion Lannister",
+    status: "Alive",
     species: "Human",
     origin: "Inderdimensional Cable",
   });

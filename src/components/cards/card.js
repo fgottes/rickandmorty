@@ -1,6 +1,6 @@
 import { createElement } from "../../utils/createElements";
 
-export function createCard({ imgSrc, name, species, origin }) {
+export function createCard({ imgSrc, name, status, species, origin }) {
   return createElement("div", {
     className: "card",
     children: [
@@ -15,7 +15,8 @@ export function createCard({ imgSrc, name, species, origin }) {
       }),
 
       createElement("p", {
-        innerText: status,
+        className: "card_status",
+        innerText: `${status === "Alive" ? "👌" : "👎"} - ${status}`,
       }),
 
       createElement("p", {

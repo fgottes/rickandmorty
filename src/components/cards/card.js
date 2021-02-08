@@ -15,6 +15,10 @@ export function createCard({ imgSrc, name, species, origin }) {
       }),
 
       createElement("p", {
+        innerText: status,
+      }),
+
+      createElement("p", {
         className: "card_species",
         innerText: species,
       }),

@@ -1,5 +1,6 @@
 import "./card.css";
 import { createCard } from "./card";
+import { createElement } from "../../utils/createElements";
 
 export default {
   title: "Components/Card",
@@ -9,35 +10,66 @@ export default {
 export const Rick = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-    name: "Rick Sanchez",
+    name: "Rick Sanchenz",
     status: "Alive",
     species: "Human",
-    origin: "Earth (C-137)",
+    origin: { name: "Earth (C-137)" },
   });
-
 export const Morty = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
     name: "Morty Smith",
     status: "Alive",
     species: "Human",
-    origin: "Earth (C-137)",
+    origin: { name: "Earth (C-137)" },
   });
-
-export const CrabSpider = () =>
+  export const CrabSpider = () =>
   createCard({
     imgSrc: "https://rickandmortyapi.com/api/character/avatar/79.jpeg",
-    name: "Crab Spider",
-    status: "Alive",
-    species: "Alien",
-    origin: "Hideout Planet",
+  name: "Crab Spider",
+  status: "Alive",
+  species: "Alien",
+  origin: { name: "Hideout Planet"},
   });
 
-export const RegularTyrionLannister = () =>
-  createCard({
-    imgSrc: "https://rickandmortyapi.com/api/character/avatar/407.jpeg",
-    name: "Regular Tyrion Lannister",
-    status: "Alive",
-    species: "Human",
-    origin: "Inderdimensional Cable",
+  //________________________________________________________________________________________________________________________________________
+
+export const Multiple = () => {
+  const characters = [
+    {
+      imgSrc: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      name: "Rick Sanchenz",
+      status: "Alive",
+      species: "Human",
+      origin: { name: "Earth (C-137)" },
+    },
+    {
+      imgSrc: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      name: "Morty Smith",
+      status: "Alive",
+      species: "Human",
+      origin: { name: "Earth (C-137)" },
+    },
+    {
+      imgSrc: "https://rickandmortyapi.com/api/character/avatar/79.jpeg",
+      name: "Crab Spider",
+      status: "Alive",
+      species: "Alien",
+      origin: { name: "Hideout Planet"},
+    },
+    
+ 
+
+  ];
+
+//_________________________________________________________________________________________________________________________________________
+
+ const container = createElement("article",{
+   className: "container",
+   childs: characters.map((character) => createCard(character)),
   });
+  
+  
+  return container;
+  
+};

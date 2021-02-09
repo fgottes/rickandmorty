@@ -26,3 +26,8 @@
 .card_status {
   color: rgb(191, 203, 241);
 }
+
+.container {
+  display: flex;
+  gap: 2em;
+}

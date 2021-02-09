@@ -1,0 +1,35 @@
+.card {
+  padding: 40px;
+  border: 4px solid rgb(114, 158, 241);
+  border-radius: 35px;
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+}
+
+.card_portrait {
+  border-radius: 15px;
+  border: 3px solid rgb(114, 158, 241);
+}
+
+.card_name {
+  font-size: x-large;
+  color: rgb(191, 203, 241);
+}
+
+.card_species {
+  color: rgb(191, 203, 241);
+}
+
+.card_origin {
+  color: rgb(191, 203, 241);
+}
+
+.card_status {
+  color: rgb(191, 203, 241);
+}
+
+.container {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+}

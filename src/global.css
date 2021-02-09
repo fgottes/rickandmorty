@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 *,
 *::after,
@@ -22,4 +22,11 @@ optgroup,
 textarea {
   margin: 0;
   font-family: "Quicksand", sans-serif;
+}
+
+@font-face {
+  font-family: "Monoton";
+  src: url("/src/assets/Monoton.woff2") format("woff2"),
+    url("/src/assets/Monoton.woff") format("woff"),
+    url("/src/assets/Monoton.ttf") format("ttf");
 }

@@ -3,7 +3,7 @@ import { createElement } from "../../utils/createElements";
 export function createCard({ imgSrc, name, status, species, origin }) {
   return createElement("div", {
     className: "card",
-    children: [
+    childs: [
       createElement("img", {
         className: "card_portrait",
         src: imgSrc,

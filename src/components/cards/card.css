@@ -28,8 +28,42 @@
 }
 
 .container {
-  display: flex;
+  display: grid;
   gap: 2em;
-  flex-wrap: wrap;
+  justify-items: center;
+}
+
+.randomGeneratorButton {
+  max-width: 10em;
+  max-height: 3em;
+  border-radius: 10px;
+  border: 2px solid rgb(114, 158, 241);
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  color: rgb(191, 203, 241);
+  justify-content: center;
+}
+
+*:focus {
+  outline: none;
+}
+
+.searchField {
+  margin-bottom: 1em;
+  line-height: 2em;
+  border: 3px solid rgb(114, 158, 241);
+  border-radius: 20px;
+  color: rgb(191, 203, 241);
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  font-size: x-large;
+  font-weight: bold;
+  padding-left: 1em;
+}
+
+.searchField::placeholder {
+  color: rgb(114, 158, 241);
+}
+
+.container2 {
+  display: grid;
   justify-content: center;
 }

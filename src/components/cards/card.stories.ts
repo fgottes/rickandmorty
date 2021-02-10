@@ -9,32 +9,7 @@ export default {
   parameters: { layout: "centered" },
 };
 
-// export const Rick = () =>
-//   createCard({
-//     imgSrc: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-//     name: "Rick Sanchenz",
-//     status: "Alive",
-//     species: "Human",
-//     origin: { name: "Earth (C-137)" },
-//   });
-// export const Morty = () =>
-//   createCard({
-//     imgSrc: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-//     name: "Morty Smith",
-//     status: "Alive",
-//     species: "Human",
-//     origin: { name: "Earth (C-137)" },
-//   });
-//   export const CrabSpider = () =>
-//   createCard({
-//     imgSrc: "https://rickandmortyapi.com/api/character/avatar/79.jpeg",
-//   name: "Crab Spider",
-//   status: "Alive",
-//   species: "Alien",
-//   origin: { name: "Hideout Planet"},
-//   });
-
-  //________________________________________________________________________________________________________________________________________:
+//________________________________________________________________________________________________________________________________________:
 
 export const Multiple = () => {
   const characters = [
@@ -105,23 +80,66 @@ CharactersFromAPI.loaders = [
 //__________________________________________________________________________________________________________________________________________:
 export const RandomCharacter = () => {
   const randomButton = createElement("button", {
+    className: "randomGeneratorButton",
     innerText: "Load random character",
     onclick: async () => {
       
       const randomNumber = Math.floor (Math.random() *(670)) + 1;
       
       const randomCharacter = await getCharacter(randomNumber);
-      container.append(createCard(randomCharacter));
+      characterContainer.innerHTML = "";
+      characterContainer.append(createCard(randomCharacter));
      
     },
-    // onclick: async function (params:type) {
+    
       
-    // }
+     
   });
+
+  const characterContainer = createElement ("div",{
+    className: "container",
+  })
 
   const container = createElement("div", {
     className: "container",
-    childs: [randomButton],
+    childs: [characterContainer, randomButton],
   });
   return container;
 };
+
+//_________________________________________________________________________________________________________________________________________:
+
+export const CharactersFromAPIWithFilter = (
+  args,
+  {
+    loaded: { characters } }
+) => {
+  const input = createElement("input", {
+    className: "searchField",
+    placeholder: "Search here...",
+    onchange: async () => {
+      const newCharacters = await getCharacters(input.value);
+      const newCards = newCharacters.map((character) => createCard(character));
+      characterContainer.innerHTML = "";
+      characterContainer.append(...newCards);
+    },
+  });
+  
+  const characterContainer = createElement("div", {
+    className: "container",
+    childs: characters.map((character) => createCard(character)),
+  });
+
+  const container = createElement("div", {
+    className: "container2",
+    childs: [input, characterContainer],
+  });
+  
+  return container;
+};
+
+CharactersFromAPIWithFilter.loaders = [
+  async () => ({
+    characters: await getCharacters(),
+  }),
+];

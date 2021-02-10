@@ -34,7 +34,7 @@ export default {
 //   origin: { name: "Hideout Planet"},
 //   });
 
-  //________________________________________________________________________________________________________________________________________
+  //________________________________________________________________________________________________________________________________________:
 
 export const Multiple = () => {
   const characters = [
@@ -64,7 +64,7 @@ export const Multiple = () => {
 
   ];
 
-//_________________________________________________________________________________________________________________________________________
+//_________________________________________________________________________________________________________________________________________:
 
  const container = createElement("article",{
    className: "container",
@@ -76,7 +76,7 @@ export const Multiple = () => {
   
 };
 
-//_________________________________________________________________________________________________________________________________________
+//_________________________________________________________________________________________________________________________________________:
 
 export const CharacterFromAPI = (args, {loaded: { character} }) => {
   return createCard(character);
@@ -102,3 +102,26 @@ CharactersFromAPI.loaders = [
     characters: await getCharacters(),
   }),
 ];
+//__________________________________________________________________________________________________________________________________________:
+export const RandomCharacter = () => {
+  const randomButton = createElement("button", {
+    innerText: "Load random character",
+    onclick: async () => {
+      
+      const randomNumber = Math.floor (Math.random() *(670)) + 1;
+      
+      const randomCharacter = await getCharacter(randomNumber);
+      container.append(createCard(randomCharacter));
+     
+    },
+    // onclick: async function (params:type) {
+      
+    // }
+  });
+
+  const container = createElement("div", {
+    className: "container",
+    childs: [randomButton],
+  });
+  return container;
+};

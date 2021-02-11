@@ -1,4 +1,4 @@
-.card {
+/* .card {
   padding: 40px;
   border: 4px solid rgb(114, 158, 241);
   border-radius: 35px;
@@ -66,4 +66,122 @@
 .container2 {
   display: grid;
   justify-content: center;
+} */
+
+/* //__________________________________________________________________________________________________ */
+
+.flip_card {
+  background-color: transparent;
+  height: 30rem;
+  width: 20rem;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  color: rgb(191, 203, 241);
+  box-sizing: content-box;
+  border-radius: 20px;
 }
+
+.flip_card_inner {
+  position: relative;
+  height: 30rem;
+  width: 20rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  color: rgb(191, 203, 241);
+}
+
+.flip_card:hover .flip_card_inner {
+  transform: rotateX(540deg);
+}
+
+.flip_card_front,
+.flip_card_back {
+  position: absolute;
+  height: 30rem;
+  width: 20rem;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  color: rgb(191, 203, 241);
+  display: grid;
+  justify-content: center;
+}
+
+.flip_card_front {
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  padding: 5px;
+  border: 3px solid rgb(114, 158, 241);
+  border-radius: 20px;
+  color: rgb(191, 203, 241);
+}
+
+.card__back {
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  transform: rotateX(540deg);
+  border-radius: 20px;
+  height: 30rem;
+  width: 20rem;
+  display: grid;
+  justify-content: center;
+  color: rgb(191, 203, 241);
+  grid-auto-flow: row;
+}
+
+.card_portrait {
+  border: 3px solid;
+  border-radius: 20px;
+  display: grid 1fr;
+  height: 16rem;
+  width: 16rem;
+  justify-content: center;
+  margin-top: 15px;
+
+  /* animation: pulse 2s infinite; */
+}
+
+.searchField {
+  margin-bottom: 1em;
+  line-height: 2em;
+  border: 3px solid rgb(114, 158, 241);
+  border-radius: 20px;
+  color: rgb(191, 203, 241);
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  font-size: x-large;
+  font-weight: bold;
+  padding-left: 1em;
+  display: grid;
+}
+
+.searchField::placeholder {
+  color: rgb(114, 158, 241);
+}
+
+*:focus {
+  outline: none;
+}
+
+/* @-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgbargba(44, 47, 204, 0);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 20px rgba(44, 47, 204, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(44, 47, 204, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 04);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(44, 47, 204, 0);
+    box-shadow: 0 0 0 20px rgba(44, 47, 204, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 47, 204, 0);
+    box-shadow: 0 0 0 0 rgba(44, 47, 204, 0);
+  }
+} */
